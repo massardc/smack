@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  Smack
 //
-//  Created by School on 03/09/2017.
 //  Copyright © 2017 ClementM. All rights reserved.
 //
 
