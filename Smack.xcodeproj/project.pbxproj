@@ -16,6 +16,8 @@
 		BFDEA3B01F5C9298005B25E1 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEA3AF1F5C9298005B25E1 /* ChatVC.swift */; };
 		BFDEA3B21F5C92B1005B25E1 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEA3B11F5C92B1005B25E1 /* ChannelVC.swift */; };
 		BFDEA3B31F5C9629005B25E1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDEA3AB1F5C887B005B25E1 /* SWRevealViewController.m */; };
+		BFED67941F649C4100181191 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED67931F649C4100181191 /* Constants.swift */; };
+		BFED67961F64A57700181191 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFED67951F64A57700181191 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		BFDEA3AB1F5C887B005B25E1 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "Smack Assets/SWReveal/SWRevealViewController.m"; sourceTree = SOURCE_ROOT; };
 		BFDEA3AF1F5C9298005B25E1 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		BFDEA3B11F5C92B1005B25E1 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
+		BFED67931F649C4100181191 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BFED67951F64A57700181191 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		BF47351B1F5C691F000DC2D8 /* Smack */ = {
 			isa = PBXGroup;
 			children = (
+				BFED67921F649C3100181191 /* Utilities */,
 				BFDEA3AE1F5C926B005B25E1 /* Model */,
 				BFDEA3AD1F5C9266005B25E1 /* View */,
 				BFDEA3AC1F5C9258005B25E1 /* Controller */,
@@ -105,6 +110,7 @@
 			children = (
 				BFDEA3AF1F5C9298005B25E1 /* ChatVC.swift */,
 				BFDEA3B11F5C92B1005B25E1 /* ChannelVC.swift */,
+				BFED67951F64A57700181191 /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,6 +128,14 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BFED67921F649C3100181191 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BFED67931F649C4100181191 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		FF1151CFF5E2B463FDB99FC9 /* Pods */ = {
@@ -259,9 +273,11 @@
 			files = (
 				BFDEA3B01F5C9298005B25E1 /* ChatVC.swift in Sources */,
 				BFDEA3B21F5C92B1005B25E1 /* ChannelVC.swift in Sources */,
+				BFED67961F64A57700181191 /* LoginVC.swift in Sources */,
 				BFDBCC021F61E24900093B15 /* GradientView.swift in Sources */,
 				BF47351D1F5C691F000DC2D8 /* AppDelegate.swift in Sources */,
 				BFDEA3B31F5C9629005B25E1 /* SWRevealViewController.m in Sources */,
+				BFED67941F649C4100181191 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -386,7 +402,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -403,6 +419,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V836JU6J3D;
 				INFOPLIST_FILE = Smack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clementm.Smack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,6 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V836JU6J3D;
 				INFOPLIST_FILE = Smack/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.clementm.Smack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
