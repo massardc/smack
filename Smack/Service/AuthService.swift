@@ -49,7 +49,7 @@ class AuthService {
             "password": password
         ]
         
-        Alamofire.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString{
+        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString{
             (response) in
             if response.result.error == nil {
                 completion(true)
@@ -68,7 +68,7 @@ class AuthService {
             "password": password
         ]
         
-        Alamofire.request(LOGIN_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.result.error == nil {
 //                if let json = response.result.value as? Dictionary<String, Any> {
 //                    if let email = json["user"] as? String {
@@ -86,6 +86,40 @@ class AuthService {
                 self.authToken = json["token"].stringValue
                 
                 self.isLoggedIn = true
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func createUser(name: String, email: String, avatarName: String, avatarColor: String, completion: @escaping CompletionHandle) {
+        
+        let lowerCaseEmail = email.lowercased()
+        let body: [String: Any] = [
+            "email": lowerCaseEmail,
+            "name": name,
+            "avatarName": avatarName,
+            "avatarColor": avatarColor
+        ]
+        let header = [
+            "Authorization": "Bearer \(AuthService.instance.authToken)",
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        Alamofire.request(URL_USER_ADD, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                let json = JSON(data: data)
+                let id = json["_id"].stringValue
+                let color = json["avatarColor"].stringValue
+                let avatarName = json["avatarName"].stringValue
+                let email = json["email"].stringValue
+                let name = json["name"].stringValue
+                
+                UserDataService.instance.setUserData(id: id, avatarColor: color, avatarName: avatarName, email: email, name: name)
                 completion(true)
             } else {
                 completion(false)
