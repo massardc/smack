@@ -217,6 +217,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="N0H-8e-Jfn" eventType="touchUpInside" id="Eo2-XM-yfT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFR-lM-t0C">
                                 <rect key="frame" x="62.5" y="336" width="250" height="30"/>
@@ -287,6 +290,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TN6-SW-z2p">
+                                <rect key="frame" x="169" y="210.5" width="37" height="37"/>
+                                <color key="color" red="0.32549019610000002" green="0.41960784309999999" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -294,16 +301,21 @@
                             <constraint firstItem="FLP-k0-wE6" firstAttribute="top" secondItem="dsa-TE-Jpe" secondAttribute="bottom" constant="40" id="LWh-oL-j1d"/>
                             <constraint firstItem="1Om-LK-xI7" firstAttribute="top" secondItem="Tl1-ap-a5K" secondAttribute="top" id="Psx-hG-nYm"/>
                             <constraint firstItem="FLP-k0-wE6" firstAttribute="centerX" secondItem="5p9-D8-1bi" secondAttribute="centerX" id="QfS-Ef-skW"/>
+                            <constraint firstItem="TN6-SW-z2p" firstAttribute="centerY" secondItem="5p9-D8-1bi" secondAttribute="centerY" constant="-105" id="RYf-WW-dEk"/>
                             <constraint firstItem="M1S-A2-EWf" firstAttribute="top" secondItem="Tl1-ap-a5K" secondAttribute="top" constant="60" id="T4o-6k-o4z"/>
                             <constraint firstItem="M1S-A2-EWf" firstAttribute="centerX" secondItem="5p9-D8-1bi" secondAttribute="centerX" id="b6m-Ou-84b"/>
                             <constraint firstItem="Tl1-ap-a5K" firstAttribute="trailing" secondItem="1Om-LK-xI7" secondAttribute="trailing" constant="16" id="cTM-nh-hrI"/>
                             <constraint firstItem="MFR-lM-t0C" firstAttribute="centerX" secondItem="5p9-D8-1bi" secondAttribute="centerX" id="hG7-Pr-KlM"/>
+                            <constraint firstItem="TN6-SW-z2p" firstAttribute="centerX" secondItem="5p9-D8-1bi" secondAttribute="centerX" id="uiV-bC-Vf3"/>
                             <constraint firstItem="MFR-lM-t0C" firstAttribute="top" secondItem="FLP-k0-wE6" secondAttribute="bottom" id="w4G-lk-gYB"/>
                             <constraint firstItem="dsa-TE-Jpe" firstAttribute="centerX" secondItem="5p9-D8-1bi" secondAttribute="centerX" id="wGS-KJ-icR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tl1-ap-a5K"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="2Tl-y8-lqT" id="aem-7u-p1c"/>
+                        <outlet property="spinner" destination="TN6-SW-z2p" id="vXF-Zg-VTw"/>
+                        <outlet property="usernameTxt" destination="XiC-WT-RaA" id="u4v-a6-bxj"/>
                         <segue destination="ZbZ-tL-fMU" kind="show" identifier="toCreateAccount" id="7ai-0j-EYU"/>
                     </connections>
                 </viewController>
