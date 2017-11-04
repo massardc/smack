@@ -21,6 +21,7 @@
 		BF92806A1FA7CFC000CC7601 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9280681FA7CFC000CC7601 /* ProfileVC.xib */; };
 		BF973C7A1FAE29F10093C1EE /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF973C791FAE29F10093C1EE /* MessageService.swift */; };
 		BF973C7C1FAE2A200093C1EE /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF973C7B1FAE2A200093C1EE /* Channel.swift */; };
+		BF973C7E1FAE30CC0093C1EE /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF973C7D1FAE30CC0093C1EE /* ChannelCell.swift */; };
 		BFBF83E51FA66B780035AB70 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBF83E41FA66B780035AB70 /* CircleImage.swift */; };
 		BFDBCC021F61E24900093B15 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDBCC011F61E24900093B15 /* GradientView.swift */; };
 		BFDEA3B01F5C9298005B25E1 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEA3AF1F5C9298005B25E1 /* ChatVC.swift */; };
@@ -50,6 +51,7 @@
 		BF9280681FA7CFC000CC7601 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		BF973C791FAE29F10093C1EE /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		BF973C7B1FAE2A200093C1EE /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		BF973C7D1FAE30CC0093C1EE /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
 		BFBF83E41FA66B780035AB70 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		BFDBCC011F61E24900093B15 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		BFDEA3A91F5C887A005B25E1 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				BFFCCCBC1F65E08B002A3498 /* RoundedButton.swift */,
 				BF4B73FB1FA60AD000E5FA02 /* AvatarCell.swift */,
 				BFBF83E41FA66B780035AB70 /* CircleImage.swift */,
+				BF973C7D1FAE30CC0093C1EE /* ChannelCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF9280691FA7CFC000CC7601 /* ProfileVC.swift in Sources */,
+				BF973C7E1FAE30CC0093C1EE /* ChannelCell.swift in Sources */,
 				BFDEA3B01F5C9298005B25E1 /* ChatVC.swift in Sources */,
 				BF4B73FA1FA6078F00E5FA02 /* AvatarPickerVC.swift in Sources */,
 				BFFCCCBD1F65E08B002A3498 /* RoundedButton.swift in Sources */,
