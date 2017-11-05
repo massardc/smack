@@ -15,6 +15,7 @@ class MessageService {
     
     var channels = [Channel]()
     var selectedChannel: Channel?
+    var messages = [Message]()
     
     func findAllChannels(completion: @escaping CompletionHandle) {
         Alamofire.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
@@ -27,7 +28,6 @@ class MessageService {
                 } catch let error {
                     debugPrint(error as Any)
                 }
-                print("Channels -> \(self.channels)")
                 NotificationCenter.default.post(name: NOTIF_CHANNELS_LOADED, object: nil)
                 completion(true)
 //                if let json = JSON(data: data).array {
@@ -43,14 +43,39 @@ class MessageService {
 //                }
                 
             } else {
-                completion(false)
                 debugPrint(response.result.error as Any)
+                completion(false)
             }
         }
     }
     
+    func findAllMessagesForChannel(channelId: String, completion: @escaping CompletionHandle) {
+        Alamofire.request("\(URL_GET_MESSAGES)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                self.clearMessages()
+                guard let data = response.data else { return }
+                
+                do {
+                    self.messages = try JSONDecoder().decode([Message].self, from: data)
+                } catch let error {
+                    debugPrint(error as Any)
+                }
+                print("Messages -> \(self.messages)")
+                completion(true)
+            } else {
+                debugPrint("MessageService.findAllMessagesForChannel -> \(response.result.error as Any)")
+                completion(false)
+            }
+        }
+        
+    }
+    
     func clearChannels() {
         channels.removeAll()
+    }
+    func clearMessages() {
+        messages.removeAll()
     }
     
     
